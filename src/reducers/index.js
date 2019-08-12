@@ -1,25 +1,19 @@
+import { GET_GITHUB_INFO_ACTION } from '../types';
 
-
-let defaultState={
-    id: 2,
-    size: 2,
-    defaultBranch: 2,
-    stargazersCount: 2,
+const defaultState = {
+  
 }
 
 const reducer = (state = defaultState, action) => {
-    switch (action.type) {
-      case 'SET':
-        return {
-          ...state, 
-          id: action.id +1,
-          size: action.size+1,
-          defaultBranch: action.myJson.defaultBranch +1,
-          stargazersCount: action.myJson.stargazersCount
-        }
-      default:
-        return state
-    }
+  switch (action.type) {
+    case GET_GITHUB_INFO_ACTION:
+      return {
+        ...state,
+        ...action.payload,
+      }
+    default:
+      return state
   }
+}
 
 export default reducer

@@ -1,5 +1,1 @@
-const ADD = 'ADD'
-
-export default {
-  ADD,
-}
+export const GET_GITHUB_INFO_ACTION = 'GET_GITHUB_INFO_ACTION';
